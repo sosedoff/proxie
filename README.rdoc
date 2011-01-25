@@ -1,0 +1,42 @@
+= Proxie: HTTP proxy and debugging tool
+
+Proxie allows you to setup HTTP proxy server on specified port, filter traffic by type, store information into SQLite3 database.
+Databases web access is powered by Sinatra web framework.
+
+= Installation
+
+  gem install proxie
+  
+= Usage
+
+Just type 'proxie' in your terminal and proxy server will be spawned.
+For additional information type:
+
+  proxie --help
+  
+Output:
+
+  Usage: proxie [options]
+    -i, --info                       Display this information.
+    -p, --port PORT                  Listen on port (8080 default)
+    -d, --db NAME                    Store results to database
+    -w, --web                        Start a Web UI for databases
+    -f, --flush                      Delete all local databases
+ 
+= Examples
+
+Setup proxy server on port 9090 and write all http data into 'sample' database
+
+  proxie -p 9090 -d sample
+  
+Activate web interface (localhost:4567/):
+
+  proxie --web
+  
+Remove all existing databases:
+  
+  proxie --flush
+
+= Credits
+
+* Dan Sosedoff - http://github.com/sosedoff
